@@ -28,7 +28,7 @@ for key in keys:
           if response and response.text:
                print("working_key_found")
                client = temp_key
-               model = "gemini-2.5-flash-lite"
+               model = "gemini-2.5-flash"
                break
      except Exception as e:
           print(f"faild key:")
