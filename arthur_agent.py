@@ -5,6 +5,7 @@ from imap_tools import MailBox, A
 import os
 import smtplib
 from email.mime.text import MIMEText
+from datetime import date, datetime
 
 load_dotenv()
 
@@ -72,12 +73,20 @@ def send_email(to_email: str, message: str) -> str:
           return f"Success: Email successfully sent to {to_email}."
      except Exception as e:
           return f"Failed to send email.\nReason: {e}"
+     
+def get_time():
+     return datetime.now().strftime("%H:%M:S")
 
-tools = [email_read, send_email]
+def get_date()-> str:
+     return date.today().strftime("%d:%m:%Y")
+
+tools = [email_read, send_email, get_date, get_time]
 
 def execute_tool(tool_name, args):
      function_tool = {"email_read": email_read,
-                      "send_email": send_email
+                      "send_email": send_email,
+                      "get_time": get_time,
+                      "get_date": get_date
                       }
 
      if tool_name not in function_tool:
