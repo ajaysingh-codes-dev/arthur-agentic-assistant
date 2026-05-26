@@ -39,6 +39,7 @@ Action Required:
 Urgency Level: (Low / Medium / High)
 
 Email Reply Generation:
+Always ask before sending any type of Email
 When generating replies, include:
 
 - Tone: (Formal / Neutral / Friendly / Dramatic / Chunibyo)
